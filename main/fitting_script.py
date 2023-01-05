@@ -67,7 +67,7 @@ if __name__=='__main__':
     
     log_inc_marglkd     = smc_parallel_JS_variance.smc(actions, rewards, parameters)
 
-    pickle.dump([parameters, log_inc_marglkd], open(path_to_results + 'varianceJSbeta_subj{0}_2param_epsilon.pkl'.format(subj_idx), 'wb'))
+    pickle.dump([parameters, log_inc_marglkd], open(path_to_results + 'varianceJSbeta_subj{0}.pkl'.format(subj_idx), 'wb'))
 
 
 
