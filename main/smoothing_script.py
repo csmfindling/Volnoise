@@ -1,3 +1,4 @@
+# script to obtain the smoothing trajectories - example with the WeberImprecision model
 import pickle
 from scipy.stats import truncnorm, multivariate_normal
 path_to_models   = 'models/'
