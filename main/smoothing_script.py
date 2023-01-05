@@ -42,7 +42,7 @@ if __name__=='__main__':
     # variable to be set    
     path_to_results = '/shared/projects/project_volnoise/trajectories/volnoise_models/Volnoise/results/smoothing_corrected/'
     nb_iterations   = 1000
-    maps            = pickle.load(open('varianceJSbeta_refined.pkl'))
+    maps            = pickle.load(open('varianceJSbeta.pkl'))
     nb_runs         = 3
     nb_sessions     = 2
 
@@ -94,7 +94,7 @@ if __name__=='__main__':
             trajectories.append(trajectories[-1])
             logproba.append(logproba[-1])
 
-    path = path_to_results + 'betamodel_traj_varianceJS_subj_{0}_run_{1}_session_{2}_nbit_{3}_corrected.pkl'.format(subj_number, i_run, i_session, nb_iterations)
+    path = path_to_results + 'betamodel_traj_varianceJS_subj_{0}_run_{1}_session_{2}_nbit_{3}.pkl'.format(subj_number, i_run, i_session, nb_iterations)
     print('saved at ' + path)
     f = open(path, 'wb')
     pickle.dump([trajectories, logproba, accep_ratio * 1./nb_iterations], f)

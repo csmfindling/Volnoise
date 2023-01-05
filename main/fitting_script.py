@@ -63,20 +63,11 @@ if __name__=='__main__':
 
     ###### obtain posterior
     parameters          = np.concatenate((pickle.load(open('models/utils/sobol_1000_2.pkl')), np.zeros(1000)[:,np.newaxis], np.zeros(1000)[:,np.newaxis]), axis=-1)
-    # parameters          = pickle.load(open('models/utils/sobol_1000_3.pkl'))
-    if refine:        
-          parameters[:,0] = beta.ppf(parameters[:,0], 1.9, 12.9, 0, 1)
-          parameters[:,1] = beta.ppf(parameters[:,1], 7.8, 27.2, 0, 1)
-          parameters[:,2] = beta.ppf(parameters[:,2], 1.4, 18.7, 0, 1)
-    else:
-        parameters[:,2]     = parameters[:,2]/2.
+    parameters[:,2]     = parameters[:,2]/2.
     
     log_inc_marglkd     = smc_parallel_JS_variance.smc(actions, rewards, parameters)
 
-    if refine:
-        pickle.dump([parameters, log_inc_marglkd], open(path_to_results + 'varianceJSbeta_subj{0}_refined_2param_epsilon.pkl'.format(subj_idx), 'wb'))
-    else:
-        pickle.dump([parameters, log_inc_marglkd], open(path_to_results + 'varianceJSbeta_subj{0}_2param_epsilon.pkl'.format(subj_idx), 'wb'))
+    pickle.dump([parameters, log_inc_marglkd], open(path_to_results + 'varianceJSbeta_subj{0}_2param_epsilon.pkl'.format(subj_idx), 'wb'))
 
 
 
