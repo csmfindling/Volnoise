@@ -1,4 +1,4 @@
-# neural variability produces efficient adaptive behavior
+# Neural variability produces efficient adaptive behavior
 
 This is the code for the paper called `neural variability produces efficient adaptive behavior`.
 
