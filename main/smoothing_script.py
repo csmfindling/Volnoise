@@ -40,7 +40,7 @@ class ImportanceSampling():
 
 if __name__=='__main__':
     # variable to be set    
-    path_to_results = '/shared/projects/project_volnoise/trajectories/volnoise_models/Volnoise/results/smoothing_corrected/'
+    path_to_results = 'results/smoothing/'
     nb_iterations   = 1000
     maps            = pickle.load(open('varianceJSbeta.pkl'))
     nb_runs         = 3
