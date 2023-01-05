@@ -38,7 +38,7 @@ if __name__=='__main__':
     nb_subj         = 25
     subject_indexes = np.array([np.all(['data/python/td_volnoise_subj_{2}_run_{0}_session_{1}.pkl'.format(i,j,k) in files for i in range(3) for j in range(2)]) * k for k in range(1,nb_subj + 1)])
     subject_indexes = subject_indexes[subject_indexes != 0]
-    subject_indexes = np.append(12, subject_indexes) # add painful subject no12
+    subject_indexes = np.append(12, subject_indexes) # add subject no12 which did 5 out of 6 blocks
     nb_subj         = len(subject_indexes)
 
     subj_idx             = subject_indexes[index]
